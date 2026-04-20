@@ -106,12 +106,55 @@
             color: var(--accent);
             border-bottom-color: var(--accent);
         }
+
+        .dropdown {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--midnight);
+            border: 1px solid var(--border);
+            border-top: none;
+            min-width: 220px;
+            z-index: 200;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.65rem 1rem;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
 <body>
     <nav>
         <a href="../index.html">Home</a>
-        <a href="/module-02/index.html">Asymmetric Encryption</a>
+        <a href="/module-01/index.html">Module 1</a>
+        <div class="dropdown">
+            <a href="/module-02/index.html">Module 2 ▾</a>
+            <div class="dropdown-menu">
+                <a href="subtopic-01.html">RSA Algorithm</a>
+                <a href="subtopic-02.html">Diffie-Hellman Key Exchange</a>
+            </div>
+        </div>
+        <a href="/module-03/index.html">Module 3</a>
+        <a href="/module-04/index.html">Module 4</a>
+
     </nav>
 
     <div class="page-wrapper">
