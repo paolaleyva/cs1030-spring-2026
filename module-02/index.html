@@ -3,27 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>An Overview of Asymmetric Encryption</title>
+    <title>Asymmetric Encryption | Computer Security</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <a href="../index.html">Home</a>
-    <a href="index.html">Module 2 Home</a>
-    <a href="subtopic-01.html">RSA</a>
-    <a href="subtopic-02.html">Diffie-Hellman Key Exchange</a>
-    <h1>Introduction to Asymmetric Encryption</h1>
-    <p>Asymmetric encryption also known as public key cryptography is a method of cryptography that uses two different keys to encrypt and decrypt data, here are some advantages of asymmetric encryption:</p>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Asymmetric Encryption</a>
+        <a href="subtopic-01.html">RSA Algorithm</a>
+        <a href="subtopic-02.html">Diffie-Hellman Key Exchange</a>
+    </nav>
 
-    <ul>
-        <li>Enhanced Security: Asymmetric encryption provides a higher level of security compared to symmetric encryption where only one key is used for both encryption and decryption. With asymmetric encryption a different key is used for each process and the private key used for decryption is kept secret by the receiver making it harder for an attacker to intercept and decrypt the data.</li>
-        <li>Authentication: It can be used to verify the sender's identity, meaning the receiver can confirm who sent the message. This is achieved when the sender encrypts a message using their private key, which can only be decrypted using their public key If the receiver can successfully decrypt the message, it proves that the sender owns the corresponding private key.</li>
-        <li> Non-repudiation: It also provides non-repudiation which means that the sender cannot deny sending a message or altering its contents this is because the message is encrypted with the sender's private key and only their public key can decrypt it . Therefore, the receiver can be sure that the message was sent by the sender and has not been tampered with.</li>
-        <li>Key distribution: Asymmetric encryption eliminates the need for a secure key distribution system that is required in symmetric encryption. With symmetric encryption, the same key is used for both encryption and decryption and the key needs to be securely shared between the sender and the receiver. Asymmetric encryption, on the other hand, allows the public key to be shared openly and the private key is kept secret by the receiver.</li>
-        <li> Versatility: It be used for a wide range of applications including secure email communication online banking transactions and e-commerce it is also used to secure SSL/TSL connections which are commonly used to secure internet traffic. </li>
-    </ul>
+    <div class="page-wrapper">
+        <main>
+            <h1>Introduction to Asymmetric Encryption</h1>
 
-    <p>Overall, the use of asymmetric encryption offers enhanced security authentication non-repudiation key distribution, and versatility these advantages make it a widely used and effective method for protecting sensitive data in various applications.</p>
+            <p>Asymmetric encryption, also known as public-key cryptography, is a method of cryptography that uses two different keys to encrypt and decrypt data. Here are some advantages of asymmetric encryption:</p>
+            <ul>
+                <li><strong>Enhanced Security:</strong> Asymmetric encryption provides a higher level of security compared to symmetric encryption, where only one key is used for both encryption and decryption. With asymmetric encryption, a different key is used for each process and the private key used for decryption is kept secret by the receiver, making it harder for an attacker to intercept and decrypt the data.</li>
+                <li><strong>Authentication:</strong> It can be used to verify the sender's identity, meaning the receiver can confirm who sent the message. This is achieved when the sender encrypts a message using their private key, which can only be decrypted using their public key. If the receiver can successfully decrypt the message, it proves that the sender owns the corresponding private key.</li>
+                <li><strong>Non-repudiation:</strong> It also provides non-repudiation, which means that the sender cannot deny sending a message or altering its contents. This is because the message is encrypted with the sender's private key and only their public key can decrypt it. Therefore, the receiver can be sure that the message was sent by the sender and has not been tampered with.</li>
+                <li><strong>Key Distribution:</strong> Asymmetric encryption eliminates the need for a secure key distribution system that is required in symmetric encryption. With symmetric encryption, the same key is used for both encryption and decryption, and the key needs to be securely shared between the sender and the receiver. Asymmetric encryption, on the other hand, allows the public key to be shared openly while the private key is kept secret.</li>
+                <li><strong>Versatility:</strong> It can be used for a wide range of applications including secure email communication, online banking transactions, and e-commerce. It is also used to secure SSL/TLS connections, which are commonly used to secure internet traffic.</li>
+            </ul>
+            <p>Overall, the use of asymmetric encryption offers enhanced security, authentication, non-repudiation, key distribution, and versatility. These advantages make it a widely used and effective method for protecting sensitive data in various applications.</p>
 
+            <h2>How It's Used Today</h2>
+            <p>Every time you visit a website beginning with <code>https://</code>, asymmetric encryption is at work. During the TLS process, your browser and the server use public-key cryptography to securely negotiate a shared session key, without ever sending that key over the network in plaintext. The two most important algorithms behind this are RSA and Diffie-Hellman, each explored in the subtopic pages.</p>
+        </main>
+
+        <aside>
+            <img src="img/asymmetric-encryption.png" alt="Diagram of asymmetric encryption">
+            <div class="ext-links">
+                <h4>Learn More</h4>
+                <a href="https://www.cloudflare.com/learning/ssl/what-is-asymmetric-encryption/" target="_blank" rel="noopener">Cloudflare: What Is Asymmetric Encryption?</a>
+                <a href="https://csrc.nist.gov/glossary/term/public_key_cryptography" target="_blank" rel="noopener">NIST: Public Key Cryptography</a>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <span>Module 2 — Computer Security</span>
+        <span>Pages: <a href="index.html">Home</a> · <a href="subtopic-01.html">RSA Algorithm</a> · <a href="subtopic-02.html">Diffie-Hellman Key Exchange</a></span>
+    </footer>
 </body>
 </html>
-

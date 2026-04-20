@@ -4,34 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduction to Altair 8800 Microcomputer</title>
-
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+        :root {
+            --navy: #0d1b2a;
+            --midnight: #1b2838;
+            --accent: #00b4d8;
+            --light: #f0f4f8;
+            --muted: #8899aa;
+            --border: rgba(0, 180, 216, 0.25);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            background-color: lightblue;
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 300;
+            background-color: var(--navy);
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+
+        .page-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: white;
+            margin: 2rem 0 0.6rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        p {
+            color: #c5d5e8;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin: 0.75rem 0 1rem 1.25rem;
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        ul li {
+            color: #c5d5e8;
+            padding-left: 0.25rem;
+        }
+
+        nav {
+            background: var(--midnight);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 1rem 0.85rem;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
         }
     </style>
 </head>
 <body>
-    <h1>Introduction to the Altair 8800 Microcomputer</h1>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="/module-02/index.html">Asymmetric Encryption</a>
+    </nav>
+
+    <div class="page-wrapper">
+        <h1>Introduction to the Altair 8800 Microcomputer</h1>
+
         <h2>An Overview of the Altair 8800 Microcomputer</h2>
-            <p>The Altair 8800 was one of the first commercially successful personal microcomputers and is often credited with helping launch the personal computer revolution. 
-            Released in 1975 by MITS (Micro Instrumentation and Telemetry Systems), the Altair 8800 was sold as a build-it-yourself kit and was originally featured on the cover of 
-            Popular Electronics magazine. Although it lacked a keyboard, monitor, or storage system, it demonstrated that computing power could be made accessible to individuals rather 
-            than only large institutions.</p>
+        <p>The Altair 8800 was one of the first commercially successful personal microcomputers and is often credited with helping launch the personal computer revolution. Released in 1975 by MITS (Micro Instrumentation and Telemetry Systems), the Altair 8800 was sold as a build-it-yourself kit and was originally featured on the cover of Popular Electronics magazine. Although it lacked a keyboard, monitor, or storage system, it demonstrated that computing power could be made accessible to individuals rather than only large institutions.</p>
+
         <h3>How did the Altair 8800 Microcomputer contribute to technology?</h3>
-            <p>The Altair 8800 contributed to technology by inspiring software development and innovation in early personal computing. It was one of the first computers to use a microprocessor, 
-            specifically the Intel 8080, which made it smaller and more affordable than previous computers. The system also motivated programmers to develop software for personal use, 
-            including the first version of Microsoft BASIC, helping establish the software industry alongside hardware development.</p>
+        <p>The Altair 8800 contributed to technology by inspiring software development and innovation in early personal computing. It was one of the first computers to use a microprocessor, specifically the Intel 8080, which made it smaller and more affordable than previous computers. The system also motivated programmers to develop software for personal use, including the first version of Microsoft BASIC, helping establish the software industry alongside hardware development.</p>
+
         <h3>Why was the Altair 8800 Microcomputer so important?</h3>
-            <p>The importance of the Altair 8800 lies in its role as a catalyst for the personal computer industry. It showed that individuals could own and operate their own computers, 
-            which shifted the direction of computing away from centralized mainframes. Its success encouraged other companies to develop more user-friendly personal computers, leading to 
-            rapid technological advancement and widespread adoption of computers in homes, schools, and businesses.</p>
+        <p>The importance of the Altair 8800 lies in its role as a catalyst for the personal computer industry. It showed that individuals could own and operate their own computers, which shifted the direction of computing away from centralized mainframes. Its success encouraged other companies to develop more user-friendly personal computers, leading to rapid technological advancement and widespread adoption of computers in homes, schools, and businesses.</p>
+
         <h3>Significance of the Altair 8800</h3>
-            <ul>
-                <li>Helped launch the personal computer revolution</li>
-                <li>Used one of the first widely available microprocessors</li>
-                <li>Inspired early software development, including Microsoft BASIC</li>
-                <li>Made computing more accessible to individuals and hobbyists</li>
-            </ul>
+        <ul>
+            <li>Helped launch the personal computer revolution</li>
+            <li>Used one of the first widely available microprocessors</li>
+            <li>Inspired early software development, including Microsoft BASIC</li>
+            <li>Made computing more accessible to individuals and hobbyists</li>
+        </ul>
+    </div>
 </body>
 </html>

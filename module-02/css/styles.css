@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&family=Source+Code+Pro:wght@400;600&display=swap');
+
+/* ── Variables ── */
+:root {
+    --navy: #0d1b2a;
+    --midnight: #1b2838;
+    --accent: #00b4d8;
+    --light: #f0f4f8;
+    --muted: #8899aa;
+    --border: rgba(0, 180, 216, 0.25);
+}
+
+/* ── Base ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    background-color: var(--navy);
+    color: var(--light);
+    min-height: 100vh;
+    line-height: 1.7;
+}
+
+/* ── Nav ── */
+nav {
+    background: var(--midnight);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 1rem 0.85rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* ── Layout ── */
+.page-wrapper {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* ── Headings ── */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: white;
+    margin: 2rem 0 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 1.25rem 0 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ── Body text ── */
+p {
+    color: #c5d5e8;
+    margin-bottom: 1rem;
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+    background: rgba(0, 180, 216, 0.1);
+    color: var(--accent);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* ── List ── */
+ul {
+    margin: 0.75rem 0 1rem 1.25rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+ul li {
+    color: #c5d5e8;
+    padding-left: 0.25rem;
+}
+
+ul li strong {
+    color: white;
+}
+
+/* ── Aside ── */
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+aside img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: block;
+}
+
+/* ── External links box ── */
+.ext-links {
+    background: var(--midnight);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.1rem 1.25rem;
+}
+
+.ext-links h4 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.ext-links a {
+    display: block;
+    color: #c5d5e8;
+    text-decoration: none;
+    font-size: 0.88rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+}
+
+.ext-links a:last-child {
+    border-bottom: none;
+}
+
+.ext-links a:hover {
+    color: var(--accent);
+}
+
+/* ── Footer ── */
+footer {
+    background: var(--midnight);
+    border-top: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+    .page-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        padding: 0.75rem 0.6rem;
+        font-size: 0.78rem;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}

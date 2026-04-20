@@ -3,16 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diffie-Hellman Key Exchange</title>
+    <title>Diffie-Hellman Key Exchange | Asymmetric Encryption</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <a href="../index.html">Home</a>
-    <a href="index.html">Module 2</a>
-    <a href="subtopic-01.html">RSA</a>
-    <h1>Diffie-Hellman Key Exchange</h1>
-    <p>Diffie-Hellman Key Exchange is a </p>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Asymmetric Encryption</a>
+        <a href="subtopic-01.html">RSA Algorithm</a>
+    </nav>
 
-    
+    <div class="page-wrapper">
+        <main>
+            <h1>Diffie-Hellman Key Exchange</h1>
+            <p>Diffie-Hellman Key Exchange (DHKE) was introduced in 1976 by Whitfield Diffie and Martin Hellman, making it one of the earliest practical implementations of public-key cryptography. It solved a problem that had stumped cryptographers for decades: how can two parties who have never met privately establish a shared secret key, even if an eavesdropper can see their entire conversation?</p>
+            <p>The protocol doesn't encrypt messages directly. Instead, it provides a secure way for two parties to <em>agree on a shared secret key</em>, which they then use with a symmetric cipher (like AES) to encrypt actual communications. This makes Diffie-Hellman a key agreement protocol rather than an encryption algorithm.</p>
+
+            <h2>How the Diffie-Hellman Exchange Works</h2>
+
+            <h3>Step 1 — Agree on public parameters</h3>
+            <p>Alice and Bob publicly agree on a large prime number <em>p</em> and a generator <em>g</em> (a primitive root modulo <em>p</em>). These values can be known to everyone, including an eavesdropper.</p>
+
+            <h3>Step 2 — Generate private secrets</h3>
+            <p>Alice picks a secret integer <em>a</em> and computes <em>A = g<sup>a</sup> mod p</em>. Bob picks a secret integer <em>b</em> and computes <em>B = g<sup>b</sup> mod p</em>. Neither shares their private integer.</p>
+
+            <h3>Step 3 — Exchange public values</h3>
+            <p>Alice sends <em>A</em> to Bob; Bob sends <em>B</em> to Alice. This exchange happens over the public channel — an eavesdropper sees both <em>A</em> and <em>B</em>.</p>
+
+            <h3>Step 4 — Compute the shared secret</h3>
+            <p>Alice computes <em>s = B<sup>a</sup> mod p</em>. Bob computes <em>s = A<sup>b</sup> mod p</em>. Both arrive at the same value: <em>g<sup>ab</sup> mod p</em>. This shared secret <em>s</em> was never transmitted.</p>
+
+            <h3>Step 5 — Derive a symmetric key</h3>
+            <p>The shared secret is fed into a key derivation function (KDF) to produce the actual encryption key used for the session.</p>
+        </main>
+
+        <aside>
+            <img src="img/diffie-hellman.png" alt="Diffie-Hellman exchange diagram">
+            <div class="ext-links">
+                <h4>Learn More</h4>
+                <a href="https://www.youtube.com/watch?v=NmM9HA2MQGI" target="_blank" rel="noopener">YouTube: Diffie-Hellman — Computerphile</a>
+                <a href="https://cryptobook.nakov.com/key-exchange/diffie-hellman-key-exchange" target="_blank" rel="noopener">Practical Cryptography for Developers: DHKE</a>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <span>Module 2 — Computer Security</span>
+        <span>Pages: <a href="index.html">Home</a> · <a href="subtopic-01.html">RSA Algorithm</a> · <a href="subtopic-02.html">Diffie-Hellman Key Exchange</a></span>
+    </footer>
 </body>
 </html>

@@ -3,19 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSA</title>
+    <title>RSA Algorithm | Asymmetric Encryption</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <a href="../index.html">Home</a>
-    <a href="index.html">Module 2</a>
-    <a href="subtopic-02.html">Diffie-Hellman Key Exchange</a>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html">Asymmetric Encryption</a>
+        <a href="subtopic-02.html">Diffie-Hellman Key Exchange</a>
+    </nav>
 
-    <h1>Rivest-Shamir-Adleman (RSA) Algorithim</h1>
-    <p>The RSA algorithm is named after Ron Rivest, Adi Shamir, and Leonard Adleman, who originally published the algorithm in 1977. The RSA algorithm is an assymettric or public-key cryptogtaphy algorithm which means that it works using two different keys, a public key and a private key. The public key is used for encryption and is known by everyone, while the provate key is used for decryption, and is kept secret by the receiver.</p>
+    <div class="page-wrapper">
+        <main>
+            <h1>Rivest-Shamir-Adleman (RSA) Algorithm</h1>
+            <p>The RSA algorithm is named after Ron Rivest, Adi Shamir, and Leonard Adleman, who originally published the algorithm in 1977. The RSA algorithm is an asymmetric, or public-key cryptography algorithm, which means that it works using two different keys: a public key and a private key. The public key is used for encryption and is known by everyone, while the private key is used for decryption, and is kept secret by the receiver.</p>
 
-    <p>The RSA algorithm is based on factorization of large numbers and modular arithemtic for encrypting and decrupting data. It consists of 3 main stages.</p>
+            <h2>How It Works</h2>
+            <p>The RSA algorithm is based on the factorization of large numbers and modular arithmetic for encrypting and decrypting data. It consists of 3 main stages:</p>
 
-    
+            <h3>Key Generation</h3>
+            <p>Two large prime numbers <em>p</em> and <em>q</em> are chosen and multiplied to produce <em>n = p × q</em>, called the modulus. From this, Euler's totient φ(n) = (p−1)(q−1) is computed. A public exponent <em>e</em> is chosen (commonly 65537), and a private exponent <em>d</em> is derived such that <em>e × d ≡ 1 (mod φ(n))</em>. The public key is the pair (e, n); the private key is (d, n).</p>
+
+            <h3>Encryption</h3>
+            <p>To send a confidential message <em>M</em> to someone, the sender obtains the recipient's public key (e, n) and computes the ciphertext: <em>C = M<sup>e</sup> mod n</em>. This ciphertext can be transmitted over any public channel. Without the private key, an attacker cannot reverse the operation.</p>
+
+            <h3>Decryption</h3>
+            <p>Only the recipient, holding the private key (d, n), can recover the original message by computing: <em>M = C<sup>d</sup> mod n</em>. The mathematical relationship between <em>e</em> and <em>d</em> guarantees that this reverses the encryption exactly. No one else can perform this step without knowing <em>d</em>.</p>
+
+            <h2>How It's Used</h2>
+            <p>RSA is used for digital signatures and for encrypting small pieces of data — most commonly the symmetric session key used in TLS/HTTPS connections. Because RSA is computationally expensive for large data, modern protocols use RSA to securely exchange a symmetric key, then switch to faster symmetric encryption (like AES) for the bulk of the data transfer.</p>
+            <p>Key sizes matter: 512-bit RSA was broken in 1999, 768-bit in 2009. NIST currently recommends a minimum of 2048 bits, with 3072 or 4096 bits for long-term security needs.</p>
+        </main>
+
+        <aside>
+            <img src="img/rsa-encryption.png" alt="RSA encryption diagram">
+            <div class="ext-links">
+                <h4>Learn More</h4>
+                <a href="https://brilliant.org/wiki/rsa-encryption/" target="_blank" rel="noopener">Brilliant.org: RSA Encryption (interactive)</a>
+                <a href="https://csrc.nist.gov/publications/detail/fips/186/5/final" target="_blank" rel="noopener">NIST FIPS 186-5: Digital Signature Standard</a>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <span>Module 2 — Computer Security</span>
+        <span>Pages: <a href="index.html">Home</a> · <a href="subtopic-01.html">RSA Algorithm</a> · <a href="subtopic-02.html">Diffie-Hellman Key Exchange</a></span>
+    </footer>
 </body>
 </html>
